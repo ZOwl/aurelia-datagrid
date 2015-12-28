@@ -12,11 +12,22 @@ export class GridColumnTemplate {
   @bindable sortable;
 
   constructor(grid) {
+    this.grid = grid;
     this.row = {};
     Object.assign(this, gridColumnBase);
   }
 
   bind(bindingContext) {
     this.bindToContext(bindingContext);
+  }
+
+  loadCssFrameworkSettings() {
+    if (this.grid.cssFrameworkConfiguration) {
+      let settings = this.grid.cssFrameworkConfiguration.textClasses;
+
+      this.editInputClass = settings.editInput;
+      this.editFieldClass = settings.editField;
+      this.editFormClass = settings.editForm;
+    }
   }
 }

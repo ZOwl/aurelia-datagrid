@@ -1,6 +1,6 @@
 <template>
   <div class.bind="filterInputGroupClass"
-       if.bind="column.filterable !== undefined && column.inputType !== 'checkbox'">
+       if.bind="column.filterable != undefined && column.inputType !== 'checkbox'">
     <input type.bind="column.inputType"
            class.bind="filterInputClass"
            placeholder="Filter"
